@@ -30,6 +30,10 @@ if [ "$(uname)" = "Darwin" ] ; then
     client_os="mac"
 fi
 
+if [ "$(uname -m)" = "arm64" ] ; then
+    client_os="${client_os}-arm64"
+fi
+
 tarball="openshift-install-${client_os}-${version}.tar.gz"
 
 url_prefix="https://mirror.openshift.com/pub/openshift-v4/clients/ocp/${version}"
